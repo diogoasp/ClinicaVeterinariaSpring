@@ -1,6 +1,7 @@
 /home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/controller/AnimalController.java
 /home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/repository/ClienteRepository.java
 /home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/repository/ConsultaRepository.java
+/home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/controller/HomeController.java
 /home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/controller/ConsultaController.java
 /home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/controller/ClienteController.java
 /home/ryzen/Documentos/ClinicaVeterinariaSpring/src/main/java/pooa/trabalho/clinicaVeterinaria/model/Animal.java

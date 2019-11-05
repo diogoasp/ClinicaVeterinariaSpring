@@ -1,10 +1,11 @@
-pooa/trabalho/clinicaVeterinaria/repository/ClienteRepository.class
 pooa/trabalho/clinicaVeterinaria/repository/AnimalRepository.class
 pooa/trabalho/clinicaVeterinaria/controller/AnimalController.class
 pooa/trabalho/clinicaVeterinaria/controller/ClienteController.class
+pooa/trabalho/clinicaVeterinaria/repository/ConsultaRepository.class
+pooa/trabalho/clinicaVeterinaria/repository/ClienteRepository.class
+pooa/trabalho/clinicaVeterinaria/controller/HomeController.class
 pooa/trabalho/clinicaVeterinaria/model/Consulta.class
 pooa/trabalho/clinicaVeterinaria/model/Cliente.class
 pooa/trabalho/clinicaVeterinaria/model/Animal.class
 pooa/trabalho/clinicaVeterinaria/ClinicaVeterinariaApplication.class
 pooa/trabalho/clinicaVeterinaria/controller/ConsultaController.class
-pooa/trabalho/clinicaVeterinaria/repository/ConsultaRepository.class
