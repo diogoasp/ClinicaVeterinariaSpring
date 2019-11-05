@@ -20,9 +20,13 @@
                     <form class="form-inline" method ="post" th:object="${consulta}" th:action="@{/consultas}" style="margin:20px 0">
                         <div class="form-group">
                             <input type="hidden" th:field="*{id}"/>
+                            <select class="form-control" id="animal" th:field="*{animal}">
+                                <option th:each="a : ${animais}" th:value = "${a.id}" th:text = "${a.nome}"></option>
+                            </select>
                             <input type="text" class="form-control" th:field="*{nomeVeterinario}" placeholder="Veterinario"/>
                             <input type="text" class="form-control" th:field="*{sintomas}" placeholder="Sintomas"/>
                             <input type="text" class="form-control" th:field="*{diagnostico}" placeholder="Diagnostico"/>
+                            <br><br>
                             <input type="date" class="form-control" th:field="*{dtConsulta}" placeholder="Data Consulta"/>
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </div>
@@ -30,6 +34,7 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Animal</th>
                                 <th>Veterinario</th>
                                 <th>Sintomas</th>
                                 <th>Diagnostico</th>
@@ -39,6 +44,7 @@
                         </thead>
                         <tbody>
                             <tr th:each="c: ${consultas}">
+                                <td th:text="${c.getNomeAnimal()}"></td>
                                 <td th:text="${c.nomeVeterinario}"></td>
                                 <td th:text="${c.sintomas}"></td>
                                 <td th:text="${c.diagnostico}"></td>

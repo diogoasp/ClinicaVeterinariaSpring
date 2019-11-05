@@ -26,14 +26,14 @@ public class Consulta implements Serializable {
     
     @OneToOne
     @JoinColumn(name = "id_animal")
-    private Animal bicho;
+    private Animal animal;
 
-    public Animal getBicho() {
-        return bicho;
+    public Animal getAnimal() {
+        return animal;
     }
 
-    public void setBicho(Animal bicho) {
-        this.bicho = bicho;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
     
     public Long getId() {
@@ -77,6 +77,10 @@ public class Consulta implements Serializable {
     }
     
     public String getNomeCliente(){
-        return bicho.getNomeProprietario();
+        return animal.getNomeProprietario();
+    }
+    
+    public String getNomeAnimal(){
+        return animal.getNome();
     }
 }

@@ -11,17 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import pooa.trabalho.clinicaVeterinaria.model.Animal;
 import pooa.trabalho.clinicaVeterinaria.repository.AnimalRepository;
+import pooa.trabalho.clinicaVeterinaria.repository.ClienteRepository;
 
 @Controller
 @RequestMapping(path = "/animais")
 public class AnimalController {
+    
     @Autowired
     AnimalRepository animaisTable;
-
+    @Autowired
+    ClienteRepository clienteTable;
     @GetMapping
+    
     public ModelAndView listar() {
         ModelAndView mv = new ModelAndView("ListaAnimal");
         mv.addObject("animais",animaisTable.findAll());
+        mv.addObject("clientes", clienteTable.findAll());
         mv.addObject(new Animal());
         return mv;
     }
@@ -42,6 +47,7 @@ public class AnimalController {
     public ModelAndView alterar(@PathVariable Long id) {
         ModelAndView mv = new ModelAndView("ListaAnimal");
         mv.addObject("animais",animaisTable.findAll());
+        mv.addObject("clientes", clienteTable.findAll());
         mv.addObject("animal",animaisTable.findById(id));
         return mv;
     }
