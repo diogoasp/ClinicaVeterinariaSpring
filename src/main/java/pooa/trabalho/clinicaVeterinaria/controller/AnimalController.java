@@ -32,13 +32,13 @@ public class AnimalController {
         return "redirect:/animais";	
     }
 
-    @DeleteMapping(value ="/excluir/{id}")
+    @GetMapping(value ="/excluir/{id}")
     public String excluir(@PathVariable Long id) {
         this.animaisTable.deleteById(id);
         return "redirect:/animais";
     }
 
-    @PutMapping(value ="/alterar/{id}")
+    @GetMapping(value ="/alterar/{id}")
     public ModelAndView alterar(@PathVariable Long id) {
         ModelAndView mv = new ModelAndView("ListaAnimal");
         mv.addObject("animais",animaisTable.findAll());

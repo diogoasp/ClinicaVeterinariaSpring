@@ -32,13 +32,13 @@ public class ConsultaController {
         return "redirect:/consultas";	
     }
 
-    @DeleteMapping(value ="/excluir/{id}")
+    @GetMapping(value ="/excluir/{id}")
     public String excluir(@PathVariable Long id) {
         this.consultasTable.deleteById(id);
         return "redirect:/consultas";
     }
 
-    @PutMapping(value ="/alterar/{id}")
+    @GetMapping(value ="/alterar/{id}")
     public ModelAndView alterar(@PathVariable Long id) {
         ModelAndView mv = new ModelAndView("ListaConsulta");
         mv.addObject("consultas",consultasTable.findAll());
