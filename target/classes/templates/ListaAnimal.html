@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="LayoutMenuLateral" >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Lista de Animais</title>
+        <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/sidebar/sidebar.css" rel="stylesheet" type="text/css" /> 
+	<link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>	
+    </head>
+    <body>
+        <section layout:fragment="conteudo">
+            <div class="panel panel-default" style="margin: 10px">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Lista de Animais</h1>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" method ="post" th:object="${animal}" th:action="@{/animais}" style="margin:20px 0">
+                        <div class="form-group">
+                            <input type="hidden" th:field="*{id}"/>
+                            <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome"/>
+                            <input type="text" class="form-control" th:field="*{raca}" placeholder="Raça"/>
+                            <input type="text" class="form-control" th:field="*{especie}" placeholder="Especie"/>
+                            <input type="text" class="form-control" th:field="*{sexo}" palceholder="Sexo"/>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Raça</th>
+                                <th>Especie</th>
+                                <th>Sexo</th>
+                                <th colspan="2">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="a: ${animais}">
+                                <td th:text="${a.nome}">João</td>
+                                <td th:text="${a.raca}">3</td>
+                                <td th:text="${a.especie}"></td>
+                                <td th:text="${a.sexo}"></td>
+                                <td> <a th:href="@{/animais/alterar/} + ${a.id}" class="glyphicon glyphicon-pencil"></a> </td>
+                                <td> <a th:href="@{/animais/excluir/} + ${a.id}" class="glyphicon glyphicon-trash"> </a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
