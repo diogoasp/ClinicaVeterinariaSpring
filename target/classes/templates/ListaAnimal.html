@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
+    <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:th="http://www.thymeleaf.org" 
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
       layout:decorator="LayoutMenuLateral" >
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Lista de Animais</title>
-        <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="/sidebar/sidebar.css" rel="stylesheet" type="text/css" /> 
-	<link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"></link>
-        <script src="/webjars/jquery/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>	
+        <title>Lista de Clientes</title>
+        <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+        <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
     </head>
     <body>
         <section layout:fragment="conteudo">
             <div class="panel panel-default" style="margin: 10px">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Lista de Animais</h1>
+                    <h1 class="panel-title">Lista de Clientes</h1>
                 </div>
                 <div class="panel-body">
                     <form class="form-inline" method ="post" th:object="${animal}" th:action="@{/animais}" style="margin:20px 0">
@@ -26,7 +23,7 @@
                             <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome"/>
                             <input type="text" class="form-control" th:field="*{raca}" placeholder="Raça"/>
                             <input type="text" class="form-control" th:field="*{especie}" placeholder="Especie"/>
-                            <input type="text" class="form-control" th:field="*{sexo}" palceholder="Sexo"/>
+                            <input type="text" class="form-control" th:field="*{sexo}" placeholder="Sexo"/>
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </div>
                     </form>
