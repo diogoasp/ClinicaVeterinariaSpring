@@ -13,11 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-<<<<<<< HEAD
-public class Consulta {
-=======
 public class Consulta implements Serializable {
->>>>>>> Controllers
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -86,6 +83,4 @@ public class Consulta implements Serializable {
     public String getNomeCliente(){
         return bicho.getNomeProprietario();
     }
-    
-
 }

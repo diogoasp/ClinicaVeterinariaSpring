@@ -15,44 +15,8 @@ import pooa.trabalho.clinicaVeterinaria.repository.ConsultaRepository;
 @Controller
 @RequestMapping(path = "/consultas")
 public class ConsultaController {
-<<<<<<< HEAD
-    
-        @Autowired
-	ConsultaRepository consultasTable;
-	
-	@GetMapping("/consultas")
-	public ModelAndView listar() {
-		ModelAndView mv = new ModelAndView("ListaConsulta.html");
-		mv.addObject("consultas",consultasTable.findAll());
-		mv.addObject(new Consulta());
-		return mv;
-	}
-	
-	@PostMapping("/consultas")
-	public String salvar(Consulta c) {
-		this.consultasTable.save(c);
-		return "redirect:/consultas";
-		
-	}
-	
-	@RequestMapping(value ="/consultas/excluir/{id}")
-	public String excluirConsultaByPathVariable(@PathVariable Long id) {
-		this.consultasTable.deleteById(id);
-		return "redirect:/consultas";
-	}
-	
-	@RequestMapping(value ="/consultas/alterar/{id}")
-	public ModelAndView alterarConsultaByPathVariable(@PathVariable Long id) {
-		ModelAndView mv = new ModelAndView("ListaConsulta.html");
-		mv.addObject("consultas",consultasTable.findAll());
-		mv.addObject("consulta",consultasTable.findById(id));
-		return mv;
-	}
-	
-=======
     @Autowired
     ConsultaRepository consultasTable;
->>>>>>> Controllers
 
     @GetMapping
     public ModelAndView listar() {
