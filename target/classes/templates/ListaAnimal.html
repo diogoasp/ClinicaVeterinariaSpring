@@ -39,8 +39,8 @@
                         </thead>
                         <tbody>
                             <tr th:each="a: ${animais}">
-                                <td th:text="${a.nome}">João</td>
-                                <td th:text="${a.raca}">3</td>
+                                <td th:text="${a.nome}"></td>
+                                <td th:text="${a.raca}"></td>
                                 <td th:text="${a.especie}"></td>
                                 <td th:text="${a.sexo}"></td>
                                 <td> <a th:href="@{/animais/alterar/} + ${a.id}" class="glyphicon glyphicon-pencil"></a> </td>

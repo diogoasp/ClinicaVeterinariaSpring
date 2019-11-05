@@ -39,8 +39,8 @@
                         </thead>
                         <tbody>
                             <tr th:each="c: ${clientes}">
-                                <td th:text="${c.nome}">João</td>
-                                <td th:text="${c.cpf}">3</td>
+                                <td th:text="${c.nome}"></td>
+                                <td th:text="${c.cpf}"></td>
                                 <td th:text="${c.telefone}"></td>
                                 <td th:text="${c.email}"></td>
                                 <td> <a th:href="@{/clientes/alterar/} + ${c.id}" class="glyphicon glyphicon-pencil"></a> </td>
