@@ -1,7 +1,6 @@
 package pooa.trabalho.clinicaVeterinaria.model;
 
 import java.io.Serializable;
-import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class Consulta implements Serializable {
@@ -24,9 +21,8 @@ public class Consulta implements Serializable {
     private String sintomas;
     @Column(length = 300, nullable = true)
     private String diagnostico;
-    @Temporal(TemporalType.DATE)
     @Column(length = 10, nullable = false)
-    private Calendar dtConsulta;
+    private String dtConsulta;
     
     @OneToOne
     @JoinColumn(name = "id_animal")
@@ -72,11 +68,11 @@ public class Consulta implements Serializable {
         this.diagnostico = diagnostico;
     }
 
-    public Calendar getDtConsulta() {
+    public String getDtConsulta() {
         return dtConsulta;
     }
 
-    public void setDtConsulta(Calendar dtConsulta) {
+    public void setDtConsulta(String dtConsulta) {
         this.dtConsulta = dtConsulta;
     }
     
