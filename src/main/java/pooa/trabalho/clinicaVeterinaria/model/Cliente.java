@@ -25,7 +25,7 @@ public class Cliente implements Serializable {
     @Column(length = 30, nullable = true)
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "proprietario")
     private List<Animal> listaAnimais;
 
     public List<Animal> getListaAnimais() {
