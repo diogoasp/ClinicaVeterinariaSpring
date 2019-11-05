@@ -12,6 +12,7 @@ import pooa.trabalho.clinicaVeterinaria.repository.ConsultaRepository;
 
 @Controller
 public class ConsultaController {
+    
         @Autowired
 	ConsultaRepository consultasTable;
 	
