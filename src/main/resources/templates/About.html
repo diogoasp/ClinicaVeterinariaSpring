@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="LayoutMenuLateral">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Sobre</title>
+        <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/sidebar/sidebar.css" rel="stylesheet" type="text/css" /> 
+	<link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"/>
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <section layout:fragment="conteudo">
+            <div class="panel panel-default" style="margin: 10px">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Sobre</h1>
+                </div>
+                <div class="panel-body">
+                    <section>
+                        <h2>Sobre</h2>
+                        <p>Aqui vai um texto lindo que você pode editar de boas</p>
+                        <p>Link para projeto: <a href="https://github.com/diogoasp/ClinicaVeterinariaSpring" target="_blank">https://github.com/diogoasp/ClinicaVeterinariaSpring</a><p>
+                        <p></p>
+                    </section>
+                    <footer>
+                        <h3>Colaboradores:</h3>
+                        <p> Danielly git: <a href="https://github.com/daniellydsa" target="_blank">https://github.com/daniellydsa</a><br> Diogo git: <a href="https://github.com/diogoasp" target="_blank">https://github.com/diogoasp</a><br> Rafael git: <a href="https://github.com/RafaelZapata" target="_blank">https://github.com/RafaelZapata</a></p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
