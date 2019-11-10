@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Consulta implements Serializable {
@@ -15,17 +16,25 @@ public class Consulta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(length = 150, nullable = false)
+    @NotEmpty(message = "Campo obrigatório")
     private String nomeVeterinario;
+    
     @Column(length = 250, nullable = false)
+    @NotEmpty(message = "Campo obrigatório")
     private String sintomas;
+    
     @Column(length = 300, nullable = true)
     private String diagnostico;
+    
     @Column(length = 10, nullable = false)
+    @NotEmpty(message = "Campo obrigatório")
     private String dtConsulta;
     
     @OneToOne
     @JoinColumn(name = "id_animal")
+    @NotEmpty(message = "Selecione um animal")
     private Animal animal;
 
     public Animal getAnimal() {

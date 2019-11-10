@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Animal {
@@ -14,12 +15,16 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     @Column(length = 150, nullable = false)
     private String nome;
+    
     @Column(length = 20, nullable = false)
     private String raca;
+    
     @Column(length = 20, nullable = false)
     private String especie;
+    
     @Column(length = 1, nullable = false)
     private char sexo;
     

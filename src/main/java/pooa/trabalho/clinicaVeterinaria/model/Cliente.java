@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Cliente implements Serializable {
@@ -16,12 +17,19 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     @Column(length = 150, nullable = false)
-    private String nome; 
+    @NotEmpty(message = "Campo obrigatório")
+    private String nome;
+    
     @Column(length = 14, nullable = false)        
+    @NotEmpty(message = "Campo obrigatório")
     private String cpf;
+    
     @Column(length = 15, nullable = false)
+    @NotEmpty(message = "Campo obrigatório")
     private String telefone;
+    
     @Column(length = 30, nullable = true)
     private String email;
 
@@ -75,6 +83,5 @@ public class Cliente implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
     
 }

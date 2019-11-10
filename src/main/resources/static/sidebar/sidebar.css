@@ -18,7 +18,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #000066;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -113,5 +113,25 @@
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+    }
+    
+    .table a{
+        color: black;
+    }
+    
+    .table ul{
+        text-decoration: none;
+        list-style-type: none;
+        padding-inline-start: 15px;
+    }
+    
+    .table ul li img{
+        margin-right: 5px;
+    }
+    
+    .table .panel-default{
+        padding-top: 10px;
+        MARGIN-BOTTOM: 0px;
+        margin-top: 5px;
     }
 }

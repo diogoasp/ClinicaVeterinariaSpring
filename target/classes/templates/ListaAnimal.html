@@ -6,15 +6,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Lista de Clientes</title>
+        <title>Lista de Animais</title>
         <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
         <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
     </head>
     <body>
         <section layout:fragment="conteudo">
-            <div class="panel panel-default" style="margin: 10px">
+            <div class="panel panel-primary" style="margin: 10px">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Lista de Clientes</h1>
+                    <h1 class="panel-title">Lista de Animais</h1>
                 </div>
                 <div class="panel-body">
                     <form class="form-inline" method ="post" th:object="${animal}" th:action="@{/animais}" style="margin:20px 0">
@@ -22,11 +22,18 @@
                             <input type="hidden" th:field="*{id}"/>
                             <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome"/>
                             <input type="text" class="form-control" th:field="*{raca}" placeholder="Raça"/>
-                            <input type="text" class="form-control" th:field="*{especie}" placeholder="Especie"/>
-                            <input type="radio" name="sexo" class="form-check-input" th:field="*{sexo}" value="M"/>Macho
-                            <input type="radio" name="sexo" class="form-check-input" th:field="*{sexo}" value="F"/>Femea
-                            <br><br>
-                            <label for="cliente">Dono: </label>
+                            <select style="margin-right: 8px" name="especie" class="form-control" id="especie" th:field="*{especie}">
+                                <option th:value="Canino">Canino</option>
+                                <option th:value="Equino">Equino</option>
+                                <option th:value="Felino">Felino</option>
+                                <option th:value="Roedora">Roedor</option>
+                                <option th:value="Ave">Ave</option>
+                                <option th:value="Bovino">Bovino</option>
+                            </select>
+                            <input type="radio" name="sexo" class="form-check-input" th:field="*{sexo}" value="M"/> Macho
+                            <input type="radio" name="sexo" class="form-check-input" th:field="*{sexo}" value="F"/> Femea
+                            <!--<br><br>-->
+                            <label style="margin-left: 8px" for="cliente">Responsável: </label>
                             <select name="cliente" class="form-control" id="cliente" th:field="*{proprietario}">
                                 <option th:each="c : ${clientes}" th:value = "${c.id}" th:text = "${c.nome}"></option>
                             </select>

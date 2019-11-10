@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="LayoutMenuLateral">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Contato</title>
+        <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/sidebar/sidebar.css" rel="stylesheet" type="text/css" /> 
+	<link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.min.css"/>
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <section layout:fragment="conteudo">
+            <div class="panel panel-default" style="margin: 10px">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Contato</h1>
+                </div>
+                <div class="panel-body">
+                    <h2>Fale Conosco</h2>
+                    <p>Entre em contato conosco para esclarecer dúvidas, relatar erros, críticas ou reclamações</p>
+                    <form name="formulario" action="mailto:dsa.danielly@yahoo.com.br" method="post" style="margin:20px 0">
+                        <div class="form-group">
+                            <!--<input type=hidden name="destino" value="dsa.danielly@yahoo.com.br">-->
+                            <input type=hidden name="enviado" value="http://localhost:8080/home">
+                            <p><b>Nome:</b><br>
+                            <input class ="form-control" type=text name="nome" size="45"></p><br>
+                            <p><b>Email:</b><br>
+                            <input class ="form-control" type=text name="email" size="45"></p><br>
+                            <p><b>Assunto:</b><br>
+                            <input class ="form-control" type=text name="assunto" size="45"></p><br>
+                            <p><b>Mensagem:</b><br>
+                            <textarea name="Mensagem" rows="10" cols="60" wrap="virtual"></textarea></p><br>
+                            <p>
+                                <input class ="btn btn-primary" type="submit" value="Enviar Email"> 
+                                <input class ="btn btn-secondary" type="reset" value="Limpar Formulário">
+                            </p>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

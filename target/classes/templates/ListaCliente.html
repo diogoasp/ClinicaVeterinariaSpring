@@ -7,12 +7,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <title>Lista de Clientes</title>
+        <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
         <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
     </head>
     <body>
         <section layout:fragment="conteudo">
-            <div class="panel panel-default" style="margin: 10px">
+            <div class="panel panel-primary" style="margin: 10px">
                 <div class="panel-heading">
                     <h1 class="panel-title">Lista de Clientes</h1>
                 </div>
@@ -34,7 +35,7 @@
                                 <th>CPF</th>
                                 <th>Telefone</th>
                                 <th>E-mail</th>
-                                <th colspan="2">Ações</th>
+                                <th colspan="4">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,14 +46,18 @@
                                 <td th:text="${c.email}"></td>
                                 <td> <a th:href="@{/clientes/alterar/} + ${c.id}" class="glyphicon glyphicon-pencil"></a> </td>
                                 <td> <a th:href="@{/clientes/excluir/} + ${c.id}" class="glyphicon glyphicon-trash"> </a> </td>
+                                <td colspan="2">
+                                    <a href="#"  class="mostrarAnimais" title="Exibir Animais"><img width="16px" height="16px"src="https://cdn0.iconfinder.com/data/icons/user-interface-material-4-1/26/369-512.png" alt="Exibir Animais"></a>
+                                    <div hidden="true" class="panel panel-default">
+                                        <ul th:each="a : ${c.listaAnimais}">
+                                            <li class = "listaAnimais"  hidden="true" th:text="${a.especie}"></li>
+                                            <li><img width="18px" height="18px" src=""><span th:text="${a.nome}"></span></li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table class="table">
-                        <div type="hidden">
-                            
-                        </div>
-                    </table>
+                    </table>                    
                 </div>
             </div>
         </section>
